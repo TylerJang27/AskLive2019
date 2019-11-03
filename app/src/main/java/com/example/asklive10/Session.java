@@ -2,8 +2,7 @@ package com.example.asklive10;
 
 import android.os.Bundle;
 
-import com.example.asklive10.classes.Globals;
-import com.example.asklive10.classes.Question;
+import com.example.asklive10.classes.*;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -49,7 +48,16 @@ public class Session extends AppCompatActivity {
         ListAdapter myRecentAdapter = new ArrayAdapter<Question>(this, android.R.layout.simple_list_item_1, recent);
         ListView myRecentListView = (ListView)findViewById(R.id.myRecentListView);
         myRecentListView.setAdapter(myRecentAdapter);
+        //TODO: ADD FORMATTING
 
+        myRecentListView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        String clickedQID = Post.valueOf((Post)(parent.getItemAtPosition(position)));
+                    }
+                }
+        );
 
     }
 

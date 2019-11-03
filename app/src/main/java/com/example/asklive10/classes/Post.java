@@ -3,7 +3,7 @@ package com.example.asklive10.classes;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Post implements Comparable<Post> {
+public class Post extends Object implements Comparable<Post> {
     private String text;
     private Date timestamp;
     protected int upvotes;
@@ -123,6 +123,14 @@ public class Post implements Comparable<Post> {
         if (!this.text.equals(ob.text)) return false;
         if (!this.postID.equals(ob.postID)) return false;
         return this.askerID==ob.askerID;
+    }
+
+    public static String valueOf(Post obj) {
+        if (obj == null) {
+            return null;
+        } else {
+            return (obj).getPostID(); //TODO: FIX IF NECESSARY
+        }
     }
 
     @Override
