@@ -1,5 +1,7 @@
 package com.example.asklive10.classes;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,6 +18,17 @@ public class Post extends Object implements Comparable<Post> {
     private String flaggedBy;
     private String struckBy;
     private ArrayList<String> voters;
+
+    public Post(String postID, String text, String askID, String upVotes, String timeStamp) {
+        this(text, askID, postID);
+        upvotes = Integer.parseInt(upVotes);
+        DateFormat df = DateFormat.getDateInstance();
+        try {
+            timestamp = df.parse(timeStamp);
+        } catch (ParseException e) {
+        }
+
+    }
 
     public Post(String tex, String askID, String posID) {
         text = tex;
@@ -142,6 +155,12 @@ public class Post extends Object implements Comparable<Post> {
 
     @Override
     public String toString() {
-        return text;
+
+        return postID + "****" + text + "****" + askerID + "****" + upvotes + "****" + timestamp.toString() + "****";
+    }
+
+    public static Post fromString(String in) {
+        String[] args = in.split("****");
+        return new Post(args[0], args[1], args[2], args[3], args[4]);
     }
 }

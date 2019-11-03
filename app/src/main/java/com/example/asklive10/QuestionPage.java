@@ -11,6 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.example.asklive10.classes.*;
+
+import java.util.ArrayList;
 
 public class QuestionPage extends AppCompatActivity {
 
@@ -22,8 +30,20 @@ public class QuestionPage extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+        Question currQuestion = Globals.getQuestion();
+        ArrayList<Comment> comments = Globals.getComments();
 
+        final TextView questText = (TextView) findViewById(R.id.QuestionText);
+        questText.setText(currQuestion.getText());
+        final TextView questTime = (TextView) findViewById(R.id.TimeAsk);
+        questTime.setText(currQuestion.getTimestamp().toString());
+        final TextView qUpVotes = (TextView) findViewById(R.id.qUpVotes);
+        questTime.setText("" + currQuestion.getUpvotes());
 
+        ListAdapter myCommentAdapter = new ArrayAdapter<Comment>(this, android.R.layout.simple_list_item_1, comments);
+        ListView myCommentListView = (ListView)findViewById(R.id.commentListView);
+        myCommentListView.setAdapter(myCommentAdapter);
+        //TODO: ADD FORMATTING
 
 
         FloatingActionButton fab = findViewById(R.id.fab);

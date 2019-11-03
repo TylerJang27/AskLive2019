@@ -15,7 +15,7 @@ public class Group {
     private Survey survey;
     private Date timeStart;
     private Date timeEnd;
-    private ArrayList<Question> questions;
+    private ArrayList<String> questions;
     private ArrayList<Question> recentQuestions;
     private ArrayList<Question> nonrecentQuestions;
     private ArrayList<Comment> comments;
@@ -38,7 +38,7 @@ public class Group {
 		//Maverick note - question should be good
 		recentQuestions = new ArrayList<Question>();
         nonrecentQuestions = new ArrayList<Question>();
-        questions = new ArrayList<Question>();
+        questions = new ArrayList<String>();
         if  (theQuestions==null)
 		{
 			theQuestions = new HashSet<>();
@@ -57,7 +57,7 @@ public class Group {
                     nonrecentQuestions.add(s);
                 }
             }
-            questions.add(s);
+            questions.add(s.toString());
             Collections.sort(recentQuestions);
             Collections.sort(nonrecentQuestions);
             Collections.sort(questions); //FIXME remove later? should sort by recent and time already
@@ -116,5 +116,8 @@ public class Group {
 
     public ArrayList<Question> getnonRecents() {
         return nonrecentQuestions;
+    }
+    public ArrayList<String> getQuestions() {
+        return questions;
     }
 }

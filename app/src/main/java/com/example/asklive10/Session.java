@@ -42,10 +42,10 @@ public class Session extends AppCompatActivity {
         });
         Log.i("onCreate", "hello my guy leb");
 
-        ArrayList<Question> recent = Globals.getGroup().getRecents();
-        ArrayList<Question> nonrecent = Globals.getGroup().getnonRecents();
+        ArrayList<String> recent = Globals.getGroup().getQuestions();
+        //ArrayList<String> nonrecent = Globals.getGroup().getnonRecents();
 
-        ListAdapter myRecentAdapter = new ArrayAdapter<Question>(this, android.R.layout.simple_list_item_1, recent);
+        ListAdapter myRecentAdapter = new CustomAdapterComment(this, recent);
         ListView myRecentListView = (ListView)findViewById(R.id.myRecentListView);
         myRecentListView.setAdapter(myRecentAdapter);
         //TODO: ADD FORMATTING
