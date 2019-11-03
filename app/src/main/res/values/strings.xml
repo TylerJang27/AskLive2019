@@ -17,4 +17,6 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_home">Home</string>
+    <string name="prompt_code">Please input a class code:</string>
+    <string name="prompt_code2">Class Code</string>
 </resources>

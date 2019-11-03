@@ -9,13 +9,13 @@
     tools:showIn="@layout/activity_home">
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="172dp"
-        android:layout_marginLeft="172dp"
-        android:layout_marginBottom="554dp"
-        android:text="TextView"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="548dp"
+        android:text="@string/prompt_code"
         android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
