@@ -53,30 +53,31 @@ public class Hardcode {
         for (int i = 0; i< codes.length; i++)
         {
             String code = codes[i];
-            ArrayList<String> row = new ArrayList<>();
-            for (String line:code.split("\n"))
-            {
-                for (String entry: line.split(","))
-                {
+            //ArrayList<String> row = new ArrayList<>();
+            for (String line:code.split("\n")) {
+                ArrayList<String> row = new ArrayList<>();
+                //row.clear();
+                for (String entry : line.split(",")) {
                     row.add(entry);
                 }
-            }
-            switch (i) {
-                case 0:
-                    users.add(row);
-                    break;
-                case 1:
-                    groups.add(row);
-                    break;
-                case 2:
-                    memberships.add(row);
-                    break;
-                case 3:
-                    questions.add(row);
-                    break;
-                case 4:
-                    comments.add(row);
-            }
+                //}
+                switch (i) {
+                    case 0:
+                        users.add(row);
+                        break;
+                    case 1:
+                        groups.add(row);
+                        break;
+                    case 2:
+                        memberships.add(row);
+                        break;
+                    case 3:
+                        questions.add(row);
+                        break;
+                    case 4:
+                        comments.add(row);
+                }
+            }//
         }
     }
 

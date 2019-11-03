@@ -58,7 +58,7 @@ public class Session extends AppCompatActivity {
         ListAdapter myRecentAdapter = new CustomAdapterComment(this, recent);
         ListView myRecentListView = (ListView)findViewById(R.id.myRecentListView);
         myRecentListView.setAdapter(myRecentAdapter);
-        //TODO: ADD FORMATTING
+        //TODO: MAKE RUN ON MORE THAN CREATE
 
         myRecentListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {

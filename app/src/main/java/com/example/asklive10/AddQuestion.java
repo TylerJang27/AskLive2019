@@ -40,14 +40,15 @@ public class AddQuestion extends AppCompatActivity {
         final Button submitButton = findViewById(R.id.submit);
         Question ques = new Question(class_code_input.getText().toString(), Globals.getUser().getUserID(), "00007");
         //Globals.setQuestion(ques);
+        int k = Hardcode.questions.size();
         Hardcode.addQuestion(ques, Globals.getGroup().getGroupID());
-
+        Log.i("onClick", "hi"+(k==Hardcode.questions.size())+"hi");
             //TODO: FIX ADDING QUESTIONS
 
         for (ArrayList<String> question: Hardcode.questions) {
             if (question.get(2).equals(Globals.getGroup().getGroupID())) {
                 Question x = (new Question(question.get(0), question.get(4), question.get(1), question.get(3), question.get(6)));
-                Globals.getGroup().addQuestion(x);
+                Globals.getGroup().addQuestion(x);  //TODO: FIXING ADDING
             }
         }
 

@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import android.util.Log;
 import android.util.Patterns;
 
 import com.example.asklive10.data.LoginRepository;
@@ -36,15 +37,17 @@ public class CodeRetrieveModel extends ViewModel {
         HashSet<String> myInstructors = new HashSet<String>();
         Survey mySurvey = new Survey();
         HashSet<Question> theQuestions = new HashSet<Question>();
-        theQuestions.add(new Question("When is HW4 due again?", "1231", "0001"));
-        theQuestions.add(new Question("Will this midterm cover caches?", "1234", "0002"));
-        theQuestions.add(new Question("Can you review how to calculate time for L2?", "4121", "0003"));
-        theQuestions.add(new Question("How do ways and block size impact caches?", "1010", "0004"));
+        //theQuestions.add(new Question("When is HW4 due again?", "1231", "0001"));
+        //theQuestions.add(new Question("Will this midterm cover caches?", "1234", "0002"));
+        //theQuestions.add(new Question("Can you review how to calculate time for L2?", "4121", "0003"));
+        //theQuestions.add(new Question("How do ways and block size impact caches?", "1010", "0004"));
 
-        for (ArrayList<String> question: Hardcode.questions) {
+        for (ArrayList<String> question: Hardcode.questions) {          //TODO: FIX THE WAY QUESTIONS IS BUILT
             //if (question.get(2).equals(Globals.getGroup().getGroupID()))
+            Log.i("join", "hi" + question.get(2)+"hereplease");
+            Log.i("join", Hardcode.questions.toString());
             if (question.get(2).equals("1")) {
-                theQuestions.add(new Question(question.get(4), question.get(0), question.get(1), question.get(3), question.get(6)));
+                theQuestions.add(new Question(question.get(0), question.get(4), question.get(1), question.get(3), question.get(6)));
             }
         }
 
