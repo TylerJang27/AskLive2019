@@ -49,10 +49,13 @@ public class Group {
 		}
         for (Question s : theQuestions) {
             boolean recent = s.getRecency();
-            if (recent) {
-                recentQuestions.add(s);
-            } else {
-                nonrecentQuestions.add(s);
+            boolean flagged = s.isFlagged();
+            if (!flagged) {
+                if (recent) {
+                    recentQuestions.add(s);
+                } else {
+                    nonrecentQuestions.add(s);
+                }
             }
             questions.add(s);
             Collections.sort(recentQuestions);
