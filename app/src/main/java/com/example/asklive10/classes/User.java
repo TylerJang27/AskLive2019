@@ -42,5 +42,15 @@ public class User {
     public boolean getInstructor() {
         return instructor;
     }
+
+    public void joinGroup(Group g)
+    {
+        //FIXME this needs to be a database query maybe?
+        if (this instanceof Student) {
+            g.addStudent(this.userID);
+        } else if (this instanceof Instructor) {
+            g.addInstructor(this.userID);
+        }
+    }
 }
 

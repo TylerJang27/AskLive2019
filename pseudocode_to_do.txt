@@ -1,0 +1,19 @@
+Home:
+-Join a class:
+--Me(class code, student id) -> Database(groups), places student in correct group
+--Database(groups) -> Me(gid)
+--Me(gid)->Database(questions)
+--Database(questions) -> Me(question texts, qids, student ids)
+--parse question text into usable list
+--Me(qid)->Database(comments)
+--Database(comments)->Me(comment texts, comment ids, user ids)
+--parse comments into usable list -------------------------------------------------- does question need a comment list for each of storage?
+
+In class:
+-Make a question:
+--Me(question text, time, gid, student id) -> DB(question)
+--DB puts the question in the correct place
+--refresh() - pull all the things
+
+
+Group needs a timeout - die after end, send query to database to kill
