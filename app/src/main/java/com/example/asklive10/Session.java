@@ -1,5 +1,6 @@
 package com.example.asklive10;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.asklive10.classes.*;
@@ -62,10 +63,29 @@ public class Session extends AppCompatActivity {
                         //Store extra intent information including Question information (see login for details)
                         //
 
+                        //TODO: query based on quid
+
+                        Question dumbq = new Question("hey what on earth is going on?", "00001", "00002");
+                        Comment dumbc1 = new Comment("i think this is what on earth is going on", "00002", dumbq, "00003");
+                        Comment dumbc2 = new Comment("no, actually this is what on earth is going on", "00003", dumbq, "00004");
+                        ArrayList<Comment> thisComm = new ArrayList<>();
+                        thisComm.add(dumbc1);
+                        thisComm.add(dumbc2);
+
+                        Globals.setQuestion(dumbq);
+                        Globals.setComments(thisComm);
+
+                        toNext();
+
                     }
                 }
         );
 
+    }
+
+    protected void toNext(){
+        Intent i = new Intent(this, QuestionPage.class);
+        startActivity(i);
     }
 
 }
