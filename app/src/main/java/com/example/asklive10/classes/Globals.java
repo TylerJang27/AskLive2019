@@ -8,6 +8,7 @@ public class Globals extends Application {
 
     private static User user;
     private static Group group;
+    private static Question thisQuestion;
     private static ArrayList<Comment> comments;
 
     public static User getUser() {
@@ -26,10 +27,16 @@ public class Globals extends Application {
         group = newGroup;
     }
 
+    public static void setQuestion(Question question) {
+        thisQuestion = question;
+    }
+
     public static void setComments(ArrayList<Comment> newComment) {
         comments=newComment;
     }
 
     public static ArrayList<Comment> getComments() { return comments; }
+
+    public static Question getQuestion() { return thisQuestion; }
 
 }
