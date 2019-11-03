@@ -20,4 +20,5 @@
     <string name="prompt_code">Please input a class code:</string>
     <string name="prompt_code2">Class Code</string>
     <string name="title_activity_session">Session</string>
+    <string name="title_activity_question_page">QuestionPage</string>
 </resources>
