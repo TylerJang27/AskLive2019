@@ -1,19 +1,53 @@
+Login:
+-Login:
+--Me(email, pass)->DB(users)
+--DB(users)->Me(valid check, uid)
+--Me creates new student with info
+
 Home:
 -Join a class:
 --Me(class code, student id) -> Database(groups), places student in correct group
 --Database(groups) -> Me(gid)
---Me(gid)->Database(questions)
+--Me(gid)->Database(questions) //basically in_class.refresh
 --Database(questions) -> Me(question texts, qids, student ids)
 --parse question text into usable list
 --Me(qid)->Database(comments)
 --Database(comments)->Me(comment texts, comment ids, user ids)
---parse comments into usable list -------------------------------------------------- does question need a comment list for each of storage?
+--parse comments into usable list ---------------------------------------------- does question need a comment list for each of storage?
 
 In class:
 -Make a question:
 --Me(question text, time, gid, student id) -> DB(question)
 --DB puts the question in the correct place
 --refresh() - pull all the things
+
+-Make a comment
+--Me(comment text, time, gid, parent id, user id) -> DB(comment)
+--DB puts comment in right place
+--refresh()
+
+-Refresh //very similar to join class - this is gonna be the important one
+--Me(gid)->Database(questions)
+--Database(questions) -> Me(question texts, qids, student ids)
+--parse question text into usable list
+--Me(qid)->Database(comments)
+--Database(comments)->Me(comment texts, comment ids, user ids)
+--parse comments into usable list
+
+-Updoot
+--Me (uid, post id) -> DB (questions or comments)
+
+-Flag
+--Me (uid, post id) -> DB (questions or comments)
+
+-Strike
+--Me (uid, post id) -> DB (questions or comments)
+--DB(questions or comments)->DB(student id)->strikes
+
+Class end:
+-Kill group:
+--Me(gid) -> DB(groups)
+--DB(uid) -> DB(membership) and murder the things
 
 
 Group needs a timeout - die after end, send query to database to kill
