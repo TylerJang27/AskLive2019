@@ -17,6 +17,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Date;
+
 import android.util.Log;
 
 public class Session extends AppCompatActivity {
@@ -64,7 +66,7 @@ public class Session extends AppCompatActivity {
 
                         //TODO: query based on quid
 
-                        Question dumbq = new Question("hey what on earth is going on?", "00001", "00002");
+                        Question dumbq = new Question("hey what on earth is going on?", "00001", "00002", "0", new Date().toString());
                         Comment dumbc1 = new Comment("i think this is what on earth is going on", "00002", dumbq, "00003");
                         Comment dumbc2 = new Comment("no, actually this is what on earth is going on", "00003", dumbq, "00004");
                         ArrayList<String> thisComm = new ArrayList<>();

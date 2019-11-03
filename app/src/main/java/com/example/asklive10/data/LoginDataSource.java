@@ -38,6 +38,7 @@ public class LoginDataSource {
                 //TODO: ADD INSTRUCTOR OPTION
                 Globals.setUser(new Student (myStrikeList, myUserID, myEmail, myName, myPass));
 
+
                 return new Result.Success<>(fakeUser);
             } else {
                 return new Result.Error(new IOException("Incorrect Login Credentials"));
