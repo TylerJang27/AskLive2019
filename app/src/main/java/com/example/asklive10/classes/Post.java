@@ -124,4 +124,9 @@ public class Post implements Comparable<Post> {
         if (!this.postID.equals(ob.postID)) return false;
         return this.askerID==ob.askerID;
     }
+
+    @Override
+    public String toString() {
+        return text;
+    }
 }

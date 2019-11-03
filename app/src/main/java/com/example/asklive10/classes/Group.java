@@ -36,7 +36,10 @@ public class Group {
         currentID = 0;
         //TODO: Determine if this should be by Question s or String s
 		//Maverick note - question should be good
-		if  (theQuestions==null)
+		recentQuestions = new ArrayList<Question>();
+        nonrecentQuestions = new ArrayList<Question>();
+        questions = new ArrayList<Question>();
+        if  (theQuestions==null)
 		{
 			theQuestions = new HashSet<>();
 			Question q1 = new Question("RTFM?", "Bob Ross", "def1");
@@ -56,6 +59,12 @@ public class Group {
             Collections.sort(nonrecentQuestions);
             Collections.sort(questions); //FIXME remove later? should sort by recent and time already
         }
+    }
+
+    //constructor called by CodeRetrieveModel
+    public Group(HashSet<String> myStudents, String myGroupID, String myStudentJoinCode,
+                 HashSet<String> myInstructors, Survey mySurvey, HashSet<Question> theQuestions) {
+        this(myStudents, myGroupID, myStudentJoinCode, "0000", myInstructors, mySurvey, theQuestions);
     }
 
     //default constructor for a Group
@@ -97,4 +106,12 @@ public class Group {
 	{
 		comments.add(c);
 	}
+
+	public ArrayList<Question> getRecents() {
+        return recentQuestions;
+    }
+
+    public ArrayList<Question> getnonRecents() {
+        return nonrecentQuestions;
+    }
 }

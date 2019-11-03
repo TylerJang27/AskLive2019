@@ -12,6 +12,7 @@ public class Survey extends Post {
         super(tex, "Capital-G God", "the best possible ID");
         upvotes = Integer.MAX_VALUE;
         isRecent = true;
+        responses = new HashMap<String, ArrayList<String>>();
         for (String option : options) {
             if (!responses.containsKey(option)) {
                 responses.put(option, new ArrayList<String>());
