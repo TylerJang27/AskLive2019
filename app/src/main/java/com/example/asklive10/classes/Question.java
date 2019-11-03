@@ -17,4 +17,9 @@ public class Question extends Post {
         resolvedBy = user.getUserID();
         return this;
     }
+
+    public boolean getResolved() {
+        return isResolved;
+    }
+
 }

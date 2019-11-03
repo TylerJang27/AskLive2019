@@ -102,6 +102,14 @@ public class Post extends Object implements Comparable<Post> {
         return upvotes;
     }
 
+    public boolean getFlagged() {
+        return isFlagged;
+    }
+
+    public boolean getStruck() {
+        return isStrike;
+    }
+
     public int upvote(User user) {
         if (voters.contains(user.getUserID())) {
             return upvotes;

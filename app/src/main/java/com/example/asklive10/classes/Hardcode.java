@@ -1,21 +1,20 @@
 package com.example.asklive10.classes;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Hardcode {
-    private static ArrayList<ArrayList<String>> users = new ArrayList<>();
-    private static ArrayList<ArrayList<String>> groups = new ArrayList<>();
-    private static ArrayList<ArrayList<String>> memberships = new ArrayList<>();
-    private static ArrayList<ArrayList<String>> questions = new ArrayList<>();
-    private static ArrayList<ArrayList<String>> comments = new ArrayList<>();
+    public static ArrayList<ArrayList<String>> users = new ArrayList<>();
+    public static ArrayList<ArrayList<String>> groups = new ArrayList<>();
+    public static ArrayList<ArrayList<String>> memberships = new ArrayList<>();
+    public static ArrayList<ArrayList<String>> questions = new ArrayList<>();
+    public static ArrayList<ArrayList<String>> comments = new ArrayList<>();
 
-    private static String usercode = "1,Tyler Jang,kerchoo\n2,Prof Lee,CS250\n3,Hongyi Zhang,123";
-    private static String groupcode = "1,CS250,cpmac\n2,egr103,engin";
-    private static String membercode = "1,1\n1,2\n2,1\n3,1";
-    private static String questioncode = "1,4,1,0,When is HW4 due again?,10:30:00,false,false,false\n"+
-            "1,5,1,2,Will this midterm cover caches?,10:32:00,false,false,false\n"+
-            "1,2,1,1,Massive amounts of profanity,10:35:00,false,true,true";
-    private static String commentcode = "2,6,5,1,10,No,10:36:00,false,false";
+    public static String usercode = "1,Tyler Jang,kerchoo\n2,Prof Lee,CS250\n3,Hongyi Zhang,123";
+    public static String groupcode = "1,CS250,cpmac\n2,egr103,engin";
+    public static String membercode = "1,1\n1,2\n2,1\n3,1";
+    public static String questioncode = "";
+    public static String commentcode = "2,6,5,1,10,No,10:36:00,false,false";
 
     /*
     users: id, name, pass
@@ -25,18 +24,30 @@ public class Hardcode {
     comment: id, cid, qid, gid, votes, descr, time, flag, strike
      */
 
-    /**
-     *
-     * @param id id
-     * @return an arraylist of
-     */
-    public ArrayList<String> getUserByID(String id)
+    public static void addQuestion(Question q, String gid)
     {
-        return null;
+        ArrayList<String> row = new ArrayList<>();
+        row.add(q.getAskerID());
+        row.add(q.getPostID());
+        row.add(""+gid);
+        row.add(""+q.getUpvotes());
+        row.add(q.getText());
+        row.add(q.getTimestamp().toString());
+        row.add(""+q.getResolved());
+        row.add(""+q.getFlagged());
+        row.add(""+q.getStruck());
+        questions.add(row);
     }
 
     public static void init()
     {
+        Date now = new Date();
+        long ms = now.getTime();
+        Date then = new Date(ms-60*1000);
+        Date more = new Date(ms-150*1000);
+        questioncode = "1,4,1,0,When is HW4 due again?,"+now.toString()+",false,false,false\n"+
+                "1,5,1,2,Will this midterm cover caches?,"+then.toString()+",false,false,false\n"+
+                "1,2,1,1,Massive amounts of profanity,"+more.toString()+",false,true,true";
         String[] codes = {usercode,groupcode,membercode,questioncode,commentcode};
         for (int i = 0; i< codes.length; i++)
         {
