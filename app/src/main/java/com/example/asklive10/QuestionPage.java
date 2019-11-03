@@ -30,6 +30,15 @@ public class QuestionPage extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+        for (ArrayList<String> question: Hardcode.comments) {
+            if (question.get(2).equals(Globals.getGroup().getGroupID())) {
+                Comment x = (new Comment(question.get(1), question.get(5), question.get(0), question.get(4), question.get(6)));
+                Globals.getGroup().addComment(x);
+            }
+        }
+
+
+
         Question currQuestion = Globals.getQuestion();
         ArrayList<String> comments = Globals.getComments();
 

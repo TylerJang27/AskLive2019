@@ -44,6 +44,14 @@ public class Session extends AppCompatActivity {
         });
         Log.i("onCreate", "hello my guy leb");
 
+        //ArrayList<Question> putToGlobal = new ArrayList<Question>();
+        for (ArrayList<String> question: Hardcode.questions) {
+            if (question.get(2).equals(Globals.getGroup().getGroupID())) {
+                Question x = (new Question(question.get(0), question.get(4), question.get(1), question.get(3), question.get(6)));
+                Globals.getGroup().addQuestion(x);
+            }
+        }
+
         ArrayList<String> recent = Globals.getGroup().getQuestions();
         //ArrayList<String> nonrecent = Globals.getGroup().getnonRecents();
 
@@ -58,6 +66,7 @@ public class Session extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         //String clickedQID = Post.valueOf((Post)(parent.getItemAtPosition(position)));
                         String clickedQID = parent.getItemAtPosition(position).toString();
+                        Question clickedQ = Question.fromString(clickedQID);
                         //TODO: query the database for comments with that question ID
                         //store query result in Globals: setComments
                         //Do an intent
@@ -66,14 +75,14 @@ public class Session extends AppCompatActivity {
 
                         //TODO: query based on quid
 
-                        Question dumbq = new Question("hey what on earth is going on?", "00001", "00002", "0", new Date().toString());
+                        Question dumbq = new Question("00001", "hey what on earth is going on?", "00002", "0", new Date().toString());
                         Comment dumbc1 = new Comment("i think this is what on earth is going on", "00002", dumbq, "00003");
                         Comment dumbc2 = new Comment("no, actually this is what on earth is going on", "00003", dumbq, "00004");
                         ArrayList<String> thisComm = new ArrayList<>();
                         thisComm.add(dumbc1.toString());
                         thisComm.add(dumbc2.toString());
 
-                        Globals.setQuestion(dumbq);
+                        Globals.setQuestion(clickedQ);
                         Globals.setComments(thisComm);
 
                         toNext();

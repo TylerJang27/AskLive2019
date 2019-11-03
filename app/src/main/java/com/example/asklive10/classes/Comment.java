@@ -1,5 +1,8 @@
 package com.example.asklive10.classes;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+
 public class Comment extends Post {
     private boolean instructor;
     private String parentID;
@@ -17,6 +20,17 @@ public class Comment extends Post {
             upvotes = Integer.MAX_VALUE;
             instructor = true;
         }
+    }
+
+    public Comment(String postID, String text, String askID, String upVotes, String timeStamp) {
+        this(text, askID, null, postID);
+        upvotes = Integer.parseInt(upVotes);
+        DateFormat df = DateFormat.getDateInstance();
+        try {
+            timestamp = df.parse(timeStamp);
+        } catch (ParseException e) {
+        }
+
     }
 
     @Override

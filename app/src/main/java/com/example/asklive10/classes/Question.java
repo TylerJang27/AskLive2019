@@ -32,6 +32,11 @@ public class Question extends Post {
         return this;
     }
 
+    public static Question fromString(String in) {
+        String[] args = in.split("\\*\\*\\*\\*");
+        return new Question(args[0], args[1], args[2], args[3], args[4]);
+    }
+
     public boolean getResolved() {
         return isResolved;
     }

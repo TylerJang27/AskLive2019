@@ -108,6 +108,9 @@ public class Group {
 			recentQuestions.add(q);
 		}
 		nonrecentQuestions.add(q);
+        Collections.sort(recentQuestions);
+        Collections.sort(nonrecentQuestions);
+        Collections.sort(questions);
 	}
 
 	public void addComment(Comment c)

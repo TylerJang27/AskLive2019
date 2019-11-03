@@ -14,6 +14,7 @@ import com.example.asklive10.data.model.LoggedInUser;
 import com.example.asklive10.R;
 import com.example.asklive10.classes.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class CodeRetrieveModel extends ViewModel {
@@ -30,8 +31,8 @@ public class CodeRetrieveModel extends ViewModel {
         //TODO: implement query
         // if query successful:
         HashSet<String> myStudents = new HashSet<String>();
-        String myGroupID = "001";
-        String myStudentJoinCode = "100";
+        String myGroupID = "1";
+        String myStudentJoinCode = "CS250";
         HashSet<String> myInstructors = new HashSet<String>();
         Survey mySurvey = new Survey();
         HashSet<Question> theQuestions = new HashSet<Question>();
@@ -39,6 +40,13 @@ public class CodeRetrieveModel extends ViewModel {
         theQuestions.add(new Question("I am a question too", "1234", "0002"));
         theQuestions.add(new Question("I am a question, psych", "4121", "0003"));
         theQuestions.add(new Question("I am inevitable", "1010", "0004"));
+
+        for (ArrayList<String> question: Hardcode.questions) {
+            //if (question.get(2).equals(Globals.getGroup().getGroupID()))
+            if (question.get(2).equals("1")) {
+                theQuestions.add(new Question(question.get(4), question.get(0), question.get(1), question.get(3), question.get(6)));
+            }
+        }
 
         //HashSet<String> myStudents, String myGroupID, String myStudentJoinCode,
         //				 HashSet<String> myInstructors, Survey mySurvey, HashSet<Question> theQuestions
