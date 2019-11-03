@@ -14,6 +14,8 @@ import com.example.asklive10.classes.Globals;
 import com.example.asklive10.classes.Hardcode;
 import com.example.asklive10.classes.Question;
 
+import java.util.ArrayList;
+
 public class AddQuestion extends AppCompatActivity {
 
     @Override
@@ -39,6 +41,16 @@ public class AddQuestion extends AppCompatActivity {
         Question ques = new Question(class_code_input.getText().toString(), Globals.getUser().getUserID(), "00007");
         //Globals.setQuestion(ques);
         Hardcode.addQuestion(ques, Globals.getGroup().getGroupID());
+
+            //TODO: FIX ADDING QUESTIONS
+
+        for (ArrayList<String> question: Hardcode.questions) {
+            if (question.get(2).equals(Globals.getGroup().getGroupID())) {
+                Question x = (new Question(question.get(0), question.get(4), question.get(1), question.get(3), question.get(6)));
+                Globals.getGroup().addQuestion(x);
+            }
+        }
+
         Intent i = new Intent(this, Session.class);
         startActivity(i);
         //handle error
