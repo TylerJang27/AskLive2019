@@ -5,19 +5,29 @@ package com.example.asklive10.data.model;
  */
 public class LoggedInUser {
 
+    private String name;
     private String userId;
-    private String displayName;
+    private String email;
+    private String password;    //TODO: HASH password
 
-    public LoggedInUser(String userId, String displayName) {
+    public LoggedInUser(String name, String userId, String email, String password) {
+        this.name = name;
         this.userId = userId;
-        this.displayName = displayName;
+        this.email = email;
+        this.password = password;
+    }
+
+    public String getDisplayName() {
+        return name;
     }
 
     public String getUserId() {
         return userId;
     }
 
-    public String getDisplayName() {
-        return displayName;
+    public String getEmail() {
+        return email;
     }
+
+    public String getPassword() { return password; } //TODO: REMOVE
 }

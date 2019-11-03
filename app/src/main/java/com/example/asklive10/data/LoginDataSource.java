@@ -4,21 +4,28 @@ import com.example.asklive10.data.model.LoggedInUser;
 
 import java.io.IOException;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 /**
  * Class that handles authentication w/ login credentials and retrieves user information.
  */
 public class LoginDataSource {
 
-    public Result<LoggedInUser> login(String username, String password) {
+    public Result<LoggedInUser> login(String email, String password) {
 
         try {
             // TODO: handle loggedInUser authentication
             LoggedInUser fakeUser =
-                    new LoggedInUser(
-                            java.util.UUID.randomUUID().toString(),
-                            "Jane Doe");
-            String hi = "true";
-            return new Result.Success<>(fakeUser); //
+                    new LoggedInUser("Jane Doe", "0001", "example@example.com", "password");
+                    //implement login credentials, store userID
+
+            if (email.equals(fakeUser.getEmail()) && email.equals(fakeUser.getPassword())) {
+                return new Result.Success<>(fakeUser);
+            } else {
+                return new Result.Error(new IOException("Incorrect Login Credentials"));
+            }
+
         } catch (Exception e) {
             return new Result.Error(new IOException("Error logging in", e));
         }
