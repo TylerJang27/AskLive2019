@@ -1,3 +1,5 @@
+package com.example.asklive10.classes;
+
 public class Question extends Post {
     private boolean isResolved;
     private String resolvedBy;

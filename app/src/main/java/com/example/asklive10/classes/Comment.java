@@ -1,3 +1,5 @@
+package com.example.asklive10.classes;
+
 public class Comment extends Post {
     private boolean instructor;
     private String parentID;

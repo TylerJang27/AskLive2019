@@ -1,3 +1,5 @@
+package com.example.asklive10.classes;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,13 +13,15 @@ public class Survey extends Post {
         upvotes = Integer.MAX_VALUE;
         isRecent = true;
         for (String option : options) {
-            responses.putIfAbsent(option, new ArrayList<>());
+            if (!responses.containsKey(option)) {
+                responses.put(option, new ArrayList<String>());
+            }
         }
     }
 
     public Survey() {
         this("", new String[0]);
-        responses.put("default survey option", new ArrayList<>());
+        responses.put("default survey option", new ArrayList<String>());
     }
 
     @Override
