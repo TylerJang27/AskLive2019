@@ -10,11 +10,9 @@
 
     <ImageView
         android:id="@+id/backClick"
-        android:layout_width="66dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginBottom="91dp"
+        android:layout_width="48dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="104dp"
         android:onClick="onClick"
         app:layout_constraintBottom_toTopOf="@+id/TimeAsk"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,11 +22,14 @@
         android:id="@+id/QuestionText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
         android:layout_marginTop="54dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:text="QuestionText"
         android:textSize="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,10 +46,15 @@
 
     <ImageView
         android:id="@+id/upVote"
-        android:layout_width="45dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="228dp"
-        android:layout_marginLeft="228dp"
+        android:layout_width="31dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginLeft="252dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/TimeAsk"
         app:layout_constraintTop_toBottomOf="@+id/QuestionText"
         app:srcCompat="@drawable/up_arrow" />
@@ -65,11 +71,11 @@
 
     <TextView
         android:id="@+id/qUpVotes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="63dp"
-        android:layout_marginRight="63dp"
-        android:text="up"
+        android:layout_width="46dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:text="up vote"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/upVote" />
 </androidx.constraintlayout.widget.ConstraintLayout>
