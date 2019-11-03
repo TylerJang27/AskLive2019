@@ -36,10 +36,10 @@ public class CodeRetrieveModel extends ViewModel {
         HashSet<String> myInstructors = new HashSet<String>();
         Survey mySurvey = new Survey();
         HashSet<Question> theQuestions = new HashSet<Question>();
-        theQuestions.add(new Question("I am a question", "1231", "0001"));
-        theQuestions.add(new Question("I am a question too", "1234", "0002"));
-        theQuestions.add(new Question("I am a question, psych", "4121", "0003"));
-        theQuestions.add(new Question("I am inevitable", "1010", "0004"));
+        theQuestions.add(new Question("When is HW4 due again?", "1231", "0001"));
+        theQuestions.add(new Question("Will this midterm cover caches?", "1234", "0002"));
+        theQuestions.add(new Question("Can you review how to calculate time for L2?", "4121", "0003"));
+        theQuestions.add(new Question("How do ways and block size impact caches?", "1010", "0004"));
 
         for (ArrayList<String> question: Hardcode.questions) {
             //if (question.get(2).equals(Globals.getGroup().getGroupID()))

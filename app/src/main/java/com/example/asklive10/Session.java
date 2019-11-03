@@ -75,9 +75,10 @@ public class Session extends AppCompatActivity {
 
                         //TODO: query based on quid
 
-                        Question dumbq = new Question("00001", "hey what on earth is going on?", "00002", "0", new Date().toString());
-                        Comment dumbc1 = new Comment("i think this is what on earth is going on", "00002", dumbq, "00003");
-                        Comment dumbc2 = new Comment("no, actually this is what on earth is going on", "00003", dumbq, "00004");
+                        Question dumbq = new Question("Will this midterm cover caches?", "00001", "00002");
+                        Comment dumbc1 = new Comment("Hopefully not! I was asleep when he explained caches.", "00002", dumbq, "00003");
+                        Comment dumbc2 = new Comment("Check the syllabus dummy.", "00003", dumbq, "00004");
+
                         ArrayList<String> thisComm = new ArrayList<>();
                         thisComm.add(dumbc1.toString());
                         thisComm.add(dumbc2.toString());
