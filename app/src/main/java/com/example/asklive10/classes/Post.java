@@ -39,12 +39,19 @@ public class Post extends Object implements Comparable<Post> {
     @Override
     public int compareTo(Post other) {
         getRecency();
+        if (this.isFlagged && !other.isFlagged) {
+            return -1;
+        }
+        if (!this.isFlagged && other.isFlagged) {
+            return 1;
+        }
         if (this.isRecent && !other.isRecent) {
             return 1;
         }
         if (!this.isRecent && other.isRecent) {
             return -1;
         }
+
         return (int) (-this.timestamp.getTime() + other.timestamp.getTime()); //FIXME maybe switch sign?
     }
 
