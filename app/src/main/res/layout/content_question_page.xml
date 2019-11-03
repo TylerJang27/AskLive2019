@@ -14,7 +14,8 @@
         android:layout_height="54dp"
         app:srcCompat="@android:drawable/ic_menu_revert"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="4dp" />
+        tools:layout_editor_absoluteY="4dp"
+        android:onClick="onClick"/>
 
     <TextView
         android:id="@+id/QuestionText"

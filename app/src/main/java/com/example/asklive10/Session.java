@@ -55,6 +55,13 @@ public class Session extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         String clickedQID = Post.valueOf((Post)(parent.getItemAtPosition(position)));
+
+                        //TODO: query the database for comments with that question ID
+                        //store query result in Globals: setComments
+                        //Do an intent
+                        //Store extra intent information including Question information (see login for details)
+                        //
+
                     }
                 }
         );

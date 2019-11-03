@@ -1,7 +1,9 @@
 package com.example.asklive10;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.asklive10.ui.login.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -27,6 +29,12 @@ public class QuestionPage extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void onClick(View view) {
+        Intent i = new Intent(this, Session.class);
+        startActivity(i);
+
     }
 
 }
