@@ -160,7 +160,7 @@ public class Post extends Object implements Comparable<Post> {
     }
 
     public static Post fromString(String in) {
-        String[] args = in.split("****");
+        String[] args = in.split("\\*\\*\\*\\*");
         return new Post(args[0], args[1], args[2], args[3], args[4]);
     }
 }

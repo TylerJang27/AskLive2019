@@ -9,7 +9,7 @@ public class Globals extends Application {
     private static User user;
     private static Group group;
     private static Question thisQuestion;
-    private static ArrayList<Comment> comments;
+    private static ArrayList<String> comments;
 
     public static User getUser() {
         return user;
@@ -31,11 +31,11 @@ public class Globals extends Application {
         thisQuestion = question;
     }
 
-    public static void setComments(ArrayList<Comment> newComment) {
+    public static void setComments(ArrayList<String> newComment) {
         comments=newComment;
     }
 
-    public static ArrayList<Comment> getComments() { return comments; }
+    public static ArrayList<String> getComments() { return comments; }
 
     public static Question getQuestion() { return thisQuestion; }
 

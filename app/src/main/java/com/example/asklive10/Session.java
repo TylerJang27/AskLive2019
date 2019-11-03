@@ -54,8 +54,8 @@ public class Session extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String clickedQID = Post.valueOf((Post)(parent.getItemAtPosition(position)));
-
+                        //String clickedQID = Post.valueOf((Post)(parent.getItemAtPosition(position)));
+                        String clickedQID = parent.getItemAtPosition(position).toString();
                         //TODO: query the database for comments with that question ID
                         //store query result in Globals: setComments
                         //Do an intent
@@ -67,9 +67,9 @@ public class Session extends AppCompatActivity {
                         Question dumbq = new Question("hey what on earth is going on?", "00001", "00002");
                         Comment dumbc1 = new Comment("i think this is what on earth is going on", "00002", dumbq, "00003");
                         Comment dumbc2 = new Comment("no, actually this is what on earth is going on", "00003", dumbq, "00004");
-                        ArrayList<Comment> thisComm = new ArrayList<>();
-                        thisComm.add(dumbc1);
-                        thisComm.add(dumbc2);
+                        ArrayList<String> thisComm = new ArrayList<>();
+                        thisComm.add(dumbc1.toString());
+                        thisComm.add(dumbc2.toString());
 
                         Globals.setQuestion(dumbq);
                         Globals.setComments(thisComm);

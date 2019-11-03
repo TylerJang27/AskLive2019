@@ -31,7 +31,7 @@ public class QuestionPage extends AppCompatActivity {
 
 
         Question currQuestion = Globals.getQuestion();
-        ArrayList<Comment> comments = Globals.getComments();
+        ArrayList<String> comments = Globals.getComments();
 
         final TextView questText = (TextView) findViewById(R.id.QuestionText);
         questText.setText(currQuestion.getText());
@@ -40,7 +40,7 @@ public class QuestionPage extends AppCompatActivity {
         final TextView qUpVotes = (TextView) findViewById(R.id.qUpVotes);
         questTime.setText("" + currQuestion.getUpvotes());
 
-        ListAdapter myCommentAdapter = new ArrayAdapter<Comment>(this, android.R.layout.simple_list_item_1, comments);
+        ListAdapter myCommentAdapter = new CustomAdapterComment(this, comments);
         ListView myCommentListView = (ListView)findViewById(R.id.commentListView);
         myCommentListView.setAdapter(myCommentAdapter);
         //TODO: ADD FORMATTING
