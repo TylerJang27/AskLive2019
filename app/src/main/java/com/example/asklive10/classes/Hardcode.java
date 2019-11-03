@@ -10,7 +10,8 @@ public class Hardcode {
     public static ArrayList<ArrayList<String>> questions = new ArrayList<>();
     public static ArrayList<ArrayList<String>> comments = new ArrayList<>();
 
-    public static String usercode = "1,Tyler Jang,kerchoo\n2,Prof Lee,CS250\n3,Hongyi Zhang,123";
+    public static String usercode = "1,Tyler Jang,taj26@duke.edu,kerchoo\n2,Prof Lee,lee@duke.edu,CS250\n" +
+            "3,Hongyi Zhang,hz@duke.edu,123";
     public static String groupcode = "1,CS250,cpmac\n2,egr103,engin";
     public static String membercode = "1,1\n1,2\n2,1\n3,1";
     public static String questioncode = "";
