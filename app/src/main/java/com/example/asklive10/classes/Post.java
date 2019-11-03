@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Post extends Object implements Comparable<Post> {
-    private String text;
-    private Date timestamp;
+    protected String text;
+    protected Date timestamp;
     protected int upvotes;
-    private boolean isFlagged;
-    private boolean isStrike;
-    private String askerID;
-    private String postID;
-    private int recencyThresh; //time until no longer considered recent, in milliseconds
+    protected boolean isFlagged;
+    protected boolean isStrike;
+    protected String askerID;
+    protected String postID;
+    protected int recencyThresh; //time until no longer considered recent, in milliseconds
     protected boolean isRecent;
-    private String flaggedBy;
-    private String struckBy;
-    private ArrayList<String> voters;
+    protected String flaggedBy;
+    protected String struckBy;
+    protected ArrayList<String> voters;
 
     public Post(String postID, String text, String askID, String upVotes, String timeStamp) {
         this(text, askID, postID);
@@ -38,6 +38,7 @@ public class Post extends Object implements Comparable<Post> {
         isStrike = false;
         timestamp = new Date();
         recencyThresh = 300 * 1000;
+        upvotes = 0;
     }
 
     public Post() {
@@ -100,6 +101,14 @@ public class Post extends Object implements Comparable<Post> {
 
     public int getUpvotes() {
         return upvotes;
+    }
+
+    public boolean getFlagged() {
+        return isFlagged;
+    }
+
+    public boolean getStruck() {
+        return isStrike;
     }
 
     public int upvote(User user) {

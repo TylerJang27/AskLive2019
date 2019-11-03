@@ -17,6 +17,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Date;
+
 import android.util.Log;
 
 public class Session extends AppCompatActivity {

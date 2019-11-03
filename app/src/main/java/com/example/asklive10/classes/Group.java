@@ -96,6 +96,11 @@ public class Group {
 		return ""+ currentID++;
 	}
 
+    public String getGroupID()
+    {
+        return "" + currentID;
+    }
+
 	public void addQuestion(Question q)
 	{
 		if (q.getRecency())
