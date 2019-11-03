@@ -11,7 +11,7 @@ public class Hardcode {
 
     private static String usercode = "1,Tyler Jang,kerchoo\n2,Prof Lee,CS250\n3,Hongyi Zhang,123";
     private static String groupcode = "1,CS250,cpmac\n2,egr103,engin";
-    private static String membercode = "1,1\n1,1\n2,1\n3,1";
+    private static String membercode = "1,1\n1,2\n2,1\n3,1";
     private static String questioncode = "1,4,1,0,When is HW4 due again?,10:30:00,false,false,false\n"+
             "1,5,1,2,Will this midterm cover caches?,10:32:00,false,false,false\n"+
             "1,2,1,1,Massive amounts of profanity,10:35:00,false,true,true";
@@ -25,7 +25,17 @@ public class Hardcode {
     comment: id, cid, qid, gid, votes, descr, time, flag, strike
      */
 
-    private static void init()
+    /**
+     *
+     * @param id id
+     * @return an arraylist of
+     */
+    public ArrayList<String> getUserByID(String id)
+    {
+        return null;
+    }
+
+    public static void init()
     {
         String[] codes = {usercode,groupcode,membercode,questioncode,commentcode};
         for (int i = 0; i< codes.length; i++)
@@ -58,27 +68,27 @@ public class Hardcode {
         }
     }
 
-    private ArrayList<ArrayList<String>> getUserDB()
+    public ArrayList<ArrayList<String>> getUserDB()
     {
         return users;
     }
 
-    private ArrayList<ArrayList<String>> getGroupDB()
+    public ArrayList<ArrayList<String>> getGroupDB()
     {
         return groups;
     }
 
-    private ArrayList<ArrayList<String>> getMembershipDB()
+    public ArrayList<ArrayList<String>> getMembershipDB()
     {
         return memberships;
     }
 
-    private ArrayList<ArrayList<String>> getQuestionDB()
+    public ArrayList<ArrayList<String>> getQuestionDB()
     {
         return questions;
     }
 
-    private ArrayList<ArrayList<String>> getCommentDB()
+    public ArrayList<ArrayList<String>> getCommentDB()
     {
         return comments;
     }
