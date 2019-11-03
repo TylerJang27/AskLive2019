@@ -24,12 +24,12 @@ public class User {
     }
 
     //accessor for the user's email
-    public String email() {
+    public String getEmail() {
         return email;
     }
 
     //accessor for the user's name
-    public String name() {
+    public String getName() {
         return name;
     }
 

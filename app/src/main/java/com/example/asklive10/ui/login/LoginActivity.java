@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -23,8 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.asklive10.R;
-import com.example.asklive10.ui.login.LoginViewModel;
-import com.example.asklive10.ui.login.LoginViewModelFactory;
+import com.example.asklive10.Home;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -137,7 +137,9 @@ public class LoginActivity extends AppCompatActivity {
     private void updateUiWithUser(LoggedInUserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        Intent i = new Intent(this, Home.class);
+        startActivity(i);
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
