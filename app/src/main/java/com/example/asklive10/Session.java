@@ -5,21 +5,16 @@ import android.os.Bundle;
 
 import com.example.asklive10.classes.*;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 
-import com.example.asklive10.R;
-
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.ScrollView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import android.util.Log;
@@ -37,8 +32,12 @@ public class Session extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toNext2();
+                /*
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                 */
             }
         });
         Log.i("onCreate", "hello my guy leb");
@@ -85,6 +84,10 @@ public class Session extends AppCompatActivity {
 
     protected void toNext(){
         Intent i = new Intent(this, QuestionPage.class);
+        startActivity(i);
+    }
+    protected void toNext2(){
+        Intent i = new Intent(this, AddQuestion.class);
         startActivity(i);
     }
 
